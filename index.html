@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>富達科技聯合處理中心</title>
+<title>富達科技聯合處理中心 | FinTech</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,9 +20,38 @@ font-family:'Noto Sans TC',sans-serif;
 }
 
 body{
-background:#070b17;
+background:#050816;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
+}
+
+/* 流星背景 */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+background:radial-gradient(circle,#0c132e,#02030a);
+}
+
+.star{
+position:absolute;
+width:2px;
+height:90px;
+background:linear-gradient(-45deg,white,transparent);
+animation:meteor 6s linear infinite;
+opacity:0.8;
+}
+
+@keyframes meteor{
+0%{
+transform:translateY(-100px) translateX(0);
+}
+100%{
+transform:translateY(900px) translateX(-600px);
+opacity:0;
+}
 }
 
 header{
@@ -28,63 +59,63 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 8%;
-background:#0b1022;
 border-bottom:1px solid #1e293b;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
 .logo{
 font-size:22px;
 font-weight:700;
-color:#4fd1c5;
+color:#38bdf8;
 }
 
 nav a{
-color:#cbd5f5;
 margin-left:25px;
 text-decoration:none;
-font-size:15px;
+color:#cbd5f5;
 }
 
 .hero{
-padding:120px 8%;
+padding:160px 8%;
 text-align:center;
-background:radial-gradient(circle at top,#0f1b3d,#060913);
 }
 
 .hero h1{
-font-size:46px;
+font-size:48px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
-color:#a5b4fc;
-max-width:700px;
+max-width:900px;
 margin:auto;
+color:#cbd5f5;
+font-size:18px;
+line-height:1.7;
 }
 
 .btn{
 display:inline-block;
-margin-top:35px;
-padding:14px 35px;
-background:linear-gradient(135deg,#22c55e,#06b6d4);
-border-radius:8px;
-color:white;
+margin-top:40px;
+padding:15px 40px;
+background:linear-gradient(135deg,#06b6d4,#22c55e);
+border-radius:10px;
 text-decoration:none;
+color:white;
 font-weight:600;
 }
 
 .section{
-padding:90px 8%;
+padding:100px 8%;
 text-align:center;
 }
 
 .section h2{
-font-size:32px;
+font-size:36px;
 margin-bottom:40px;
 }
 
-.services{
+.grid{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
@@ -92,16 +123,16 @@ gap:30px;
 }
 
 .card{
+width:300px;
 background:#0f172a;
-padding:35px;
-width:280px;
-border-radius:12px;
 border:1px solid #1e293b;
+padding:30px;
+border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
 border-color:#38bdf8;
 }
 
@@ -110,64 +141,85 @@ margin-bottom:15px;
 color:#38bdf8;
 }
 
-.about{
-max-width:850px;
+.text{
+max-width:950px;
 margin:auto;
 color:#cbd5f5;
+line-height:1.8;
 }
 
-.contact-box{
-margin-top:30px;
-font-size:16px;
-color:#cbd5f5;
+.brand{
+width:280px;
+background:#020617;
+border:1px solid #1e293b;
+padding:30px;
+border-radius:10px;
 }
 
-.footer{
-margin-top:80px;
-background:#030712;
-padding:40px 8%;
+.brand h4{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+footer{
+margin-top:100px;
+padding:40px;
 text-align:center;
-color:#94a3b8;
-font-size:14px;
 border-top:1px solid #1e293b;
+color:#94a3b8;
 }
 
 .notice{
-margin-top:15px;
-color:#cbd5f5;
+margin-top:10px;
 font-size:13px;
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
-<header>
+<div class="stars">
 
-<div class="logo">
-富達科技聯合處理中心
+<div class="star" style="left:10%;animation-delay:0s"></div>
+<div class="star" style="left:30%;animation-delay:2s"></div>
+<div class="star" style="left:60%;animation-delay:1s"></div>
+<div class="star" style="left:80%;animation-delay:3s"></div>
+
 </div>
 
+<header>
+
+<div class="logo">富達科技聯合處理中心</div>
+
 <nav>
+
 <a href="#">首頁</a>
-<a href="#service">核心服務</a>
-<a href="#about">關於我們</a>
-<a href="#contact">聯絡客服</a>
+<a href="#services">核心服務</a>
+<a href="#security">安全架構</a>
+<a href="#about">公司介紹</a>
+<a href="#brands">品牌體系</a>
+<a href="#contact">聯絡我們</a>
+
 </nav>
 
 </header>
 
-
-
 <section class="hero">
 
-<h1>金融科技整合解決方案</h1>
+<h1>金融科技 × 金流系統 × 投資策略</h1>
 
 <p>
-富達科技聯合處理中心專注於金融科技整合、金流處理系統與安全風控服務，
-致力為企業提供穩定、安全且高效率的支付與資金管理解決方案。
+
+富達科技聯合處理中心為專注於金融科技整合與資金管理的科技團隊，
+致力於建立安全、穩定且高效率的交易與支付環境。
+
+團隊核心服務包含第三方金流系統整合、
+金融科技平台開發、交易風控架構以及資金管理服務。
+透過完善的技術架構與系統開發能力，
+為企業與合作夥伴提供穩定可靠的交易基礎設施。
+
 </p>
 
 <a class="btn" href="https://lin.ee/MGbqV0C" target="_blank">
@@ -178,35 +230,111 @@ font-size:13px;
 
 
 
-<section id="service" class="section">
+<section id="services" class="section">
 
 <h2>核心服務</h2>
 
-<div class="services">
+<div class="grid">
 
 <div class="card">
-<h3>金流整合</h3>
+
+<h3>第三方金流整合</h3>
+
 <p>
-提供完整第三方金流整合方案，
-協助企業快速導入線上支付與收款系統。
+
+提供企業完整的第三方金流整合服務，
+包含收款系統串接、交易處理與資金流管理。
+
+系統支援高流量交易處理，
+並提供完整交易紀錄與對帳機制，
+協助企業建立安全且穩定的收付款系統。
+
 </p>
+
 </div>
 
-<div class="card">
-<h3>金融科技系統</h3>
-<p>
-建立穩定高效的金融科技系統，
-提升企業資金管理與營運效率。
-</p>
-</div>
+
 
 <div class="card">
-<h3>風險控管</h3>
+
+<h3>金融科技系統開發</h3>
+
 <p>
-多層級風控架構與安全監控，
-確保交易安全與資金流動穩定。
+
+團隊專注於金融科技平台開發，
+提供帳戶系統、交易處理架構與管理後台。
+
+系統設計具備高穩定性與可擴展性，
+可支援大量交易與長期營運需求。
+
 </p>
+
 </div>
+
+
+
+<div class="card">
+
+<h3>投資策略與資金管理</h3>
+
+<p>
+
+透過市場研究與數據分析，
+建立多元投資策略與資金運作模式，
+為資金運營提供更高效率的管理方式。
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>系統技術整合</h3>
+
+<p>
+
+提供企業系統整合服務，
+包含 API 串接、資料整合與平台管理工具，
+協助企業建立完整的數位營運架構。
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="security" class="section">
+
+<h2>安全與風控架構</h2>
+
+<div class="text">
+
+<p>
+
+在金融交易與資金管理領域中，
+安全與風險控制為最重要的核心。
+
+富達科技聯合處理中心透過多層級交易監控、
+異常交易偵測與系統安全機制，
+建立完善的交易風控架構。
+
+</p>
+
+<br>
+
+<p>
+
+系統透過交易監控與資料分析，
+即時偵測異常交易行為，
+確保平台交易安全與資金流穩定。
+
+</p>
 
 </div>
 
@@ -216,23 +344,120 @@ font-size:13px;
 
 <section id="about" class="section">
 
-<h2>關於我們</h2>
+<h2>公司介紹</h2>
 
-<div class="about">
+<div class="text">
 
 <p>
-富達科技聯合處理中心致力於提供企業級金融科技服務，
-透過專業的系統開發能力與支付整合技術，
-為合作企業建立穩定、安全且高效的金流環境。
+
+富達科技聯合處理中心為金融科技整合團隊，
+致力於打造安全且高效率的金融科技服務平台。
+
+團隊核心專注於金流處理系統、
+金融科技平台開發以及資金管理架構。
+
 </p>
 
 <br>
 
 <p>
-我們專注於金融科技、金流處理與系統整合，
-協助企業快速建立安全可靠的交易基礎架構，
-提升整體商業運營效率。
+
+透過穩定的系統架構與專業技術能力，
+我們為合作夥伴提供可靠的金融科技基礎建設，
+協助企業建立完整的交易環境與資金管理體系。
+
 </p>
+
+</div>
+
+</section>
+
+
+
+<section id="brands" class="section">
+
+<h2>品牌體系</h2>
+
+<div class="grid">
+
+<div class="brand">
+
+<h4>富達科技聯合處理中心</h4>
+
+<p>
+
+核心金融科技品牌，
+主要負責第三方金流整合、
+金融科技系統開發與資金管理架構。
+
+</p>
+
+</div>
+
+
+
+<div class="brand">
+
+<h4>ZR SHOP</h4>
+
+<p>
+
+數位服務與科技平台，
+提供多元線上服務與數位商品解決方案。
+
+</p>
+
+</div>
+
+
+
+<div class="brand">
+
+<h4>YUKI</h4>
+
+<p>
+
+電商品牌與數位服務平台，
+專注於線上商城與數位商品銷售。
+
+</p>
+
+</div>
+
+
+
+<div class="brand">
+
+<h4>SHRIMP 商城</h4>
+
+<p>
+
+SHRIMP 商城為本團隊旗下平台，
+專注於代儲與代購服務系統。
+
+平台提供完整訂單管理系統、
+自動化處理工具與金流整合機制，
+提升交易效率並確保交易流程穩定安全。
+
+</p>
+
+</div>
+
+
+
+<div class="brand">
+
+<h4>ECX PANEL</h4>
+
+<p>
+
+ECX PANEL 為本團隊合作與關係企業，
+提供系統管理面板與技術工具，
+雙方於系統開發與平台技術方面保持合作。
+
+</p>
+
+</div>
 
 </div>
 
@@ -242,13 +467,17 @@ font-size:13px;
 
 <section id="contact" class="section">
 
-<h2>客服聯絡</h2>
+<h2>聯絡客服</h2>
 
-<div class="contact-box">
+<div class="text">
 
-<p>官方LINE：<a href="https://lin.ee/MGbqV0C" target="_blank" style="color:#38bdf8;">點此聯絡</a></p>
+<p>官方LINE：</p>
+<p>https://lin.ee/MGbqV0C</p>
 
-<p>Email：Wag123890@gmail.com</p>
+<br>
+
+<p>Email：</p>
+<p>Wag123890@gmail.com</p>
 
 </div>
 
@@ -256,15 +485,18 @@ font-size:13px;
 
 
 
-<div class="footer">
+<footer>
 
 <p>© 2026 富達科技聯合處理中心</p>
 
 <p class="notice">
+
 本團隊所有款項均由永豐銀行做專款專用帳戶
+
 </p>
 
-</div>
+</footer>
 
 </body>
+
 </html>
