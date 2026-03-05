@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富達科技聯合處理中心</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0f1a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#0f172a;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(180deg,#0b0f1a,#111827);
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+color:#cbd5e1;
+}
+
+.btn{
+margin-top:30px;
+display:inline-block;
+padding:15px 35px;
+background:#22c55e;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.section{
+padding:80px 10%;
+text-align:center;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+background:#111827;
+padding:30px;
+border-radius:12px;
+width:260px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#1e293b;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+background:#020617;
+color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+富達科技聯合處理中心
+</div>
+
+<nav>
+<a href="#">首頁</a>
+<a href="#service">服務</a>
+<a href="#about">關於我們</a>
+<a href="#contact">聯絡</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>金融科技整合服務</h1>
+
+<p>
+專注於金流處理、金融科技系統與高品質技術整合
+</p>
+
+<a class="btn" href="#service">
+了解更多
+</a>
+
+</section>
+
+
+
+<section id="service" class="section">
+
+<h2>核心服務</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>金流整合</h3>
+<p>
+提供完整的第三方金流串接與收付款解決方案，
+讓企業快速導入安全可靠的支付系統。
+</p>
+</div>
+
+<div class="card">
+<h3>金融科技系統</h3>
+<p>
+打造穩定的金融科技平台，
+提升商業運營效率與資金管理能力。
+</p>
+</div>
+
+<div class="card">
+<h3>風控與安全</h3>
+<p>
+建立多層風險控管與資安防護，
+確保交易安全與數據完整。
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="about" class="section">
+
+<h2>關於富達科技</h2>
+
+<p>
+富達科技聯合處理中心致力於提供企業級金融科技服務，
+透過專業的系統開發與金流整合能力，
+為合作夥伴建立穩定、安全且高效的交易環境。
+</p>
+
+</section>
+
+
+
+<section id="contact" class="section">
+
+<h2>聯絡我們</h2>
+
+<p>Email：service@yourmail.com</p>
+
+<p>Discord / Telegram / Line 均可聯絡客服</p>
+
+</section>
+
+
+
+<div class="footer">
+
+© 2026 富達科技聯合處理中心
+
+</div>
+
+</body>
+</html>
