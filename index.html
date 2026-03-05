@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>富達科技聯合處理中心 | FinTech</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>富達科技聯合處理中心</title>
 
 <style>
 
@@ -16,291 +12,206 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Noto Sans TC',sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 }
 
 body{
-background:#050816;
+background:#0b0f1a;
 color:white;
+line-height:1.6;
 overflow-x:hidden;
 }
 
-/* 流星背景 */
-
-.stars{
+canvas{
 position:fixed;
-width:100%;
-height:100%;
+top:0;
+left:0;
 z-index:-1;
-background:radial-gradient(circle,#0c132e,#02030a);
 }
 
-.star{
-position:absolute;
-width:2px;
-height:90px;
-background:linear-gradient(-45deg,white,transparent);
-animation:meteor 6s linear infinite;
-opacity:0.8;
-}
-
-@keyframes meteor{
-0%{
-transform:translateY(-100px) translateX(0);
-}
-100%{
-transform:translateY(900px) translateX(-600px);
-opacity:0;
-}
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
 }
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-border-bottom:1px solid #1e293b;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+padding:60px 0;
+text-align:center;
 }
 
-.logo{
-font-size:22px;
+header h1{
+font-size:32px;
 font-weight:700;
-color:#38bdf8;
+letter-spacing:2px;
 }
 
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#cbd5f5;
+header p{
+color:#b9c3ff;
+margin-top:10px;
+font-size:15px;
 }
 
-.hero{
-padding:160px 8%;
-text-align:center;
+section{
+padding:60px 0;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:900px;
-margin:auto;
-color:#cbd5f5;
-font-size:18px;
-line-height:1.7;
-}
-
-.btn{
-display:inline-block;
-margin-top:40px;
-padding:15px 40px;
-background:linear-gradient(135deg,#06b6d4,#22c55e);
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:600;
-}
-
-.section{
-padding:100px 8%;
-text-align:center;
-}
-
-.section h2{
-font-size:36px;
-margin-bottom:40px;
+h2{
+font-size:24px;
+margin-bottom:25px;
+border-left:4px solid #4f7cff;
+padding-left:10px;
 }
 
 .grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
 .card{
-width:300px;
-background:#0f172a;
-border:1px solid #1e293b;
-padding:30px;
-border-radius:12px;
-transition:0.3s;
+background:rgba(255,255,255,0.03);
+padding:22px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border-color:#38bdf8;
+transform:translateY(-5px);
+border-color:#4f7cff;
 }
 
 .card h3{
-margin-bottom:15px;
-color:#38bdf8;
+font-size:18px;
+margin-bottom:8px;
 }
 
-.text{
-max-width:950px;
-margin:auto;
-color:#cbd5f5;
-line-height:1.8;
+.card p{
+font-size:14px;
+color:#cbd2ff;
 }
 
 .brand{
-width:280px;
-background:#020617;
-border:1px solid #1e293b;
-padding:30px;
+background:rgba(255,255,255,0.03);
+padding:22px;
 border-radius:10px;
+border:1px solid rgba(255,255,255,0.08);
 }
 
 .brand h4{
-color:#38bdf8;
-margin-bottom:10px;
+font-size:17px;
+margin-bottom:8px;
+}
+
+.brand p{
+font-size:14px;
+color:#cbd2ff;
 }
 
 footer{
-margin-top:100px;
-padding:40px;
 text-align:center;
-border-top:1px solid #1e293b;
-color:#94a3b8;
+padding:40px 0;
+font-size:13px;
+color:#9aa4ff;
+border-top:1px solid rgba(255,255,255,0.08);
 }
 
-.notice{
-margin-top:10px;
-font-size:13px;
+.line-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#06C755;
+color:white;
+padding:12px 16px;
+border-radius:40px;
+font-size:14px;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,255,120,.5);
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="stars">
+<canvas id="bg"></canvas>
 
-<div class="star" style="left:10%;animation-delay:0s"></div>
-<div class="star" style="left:30%;animation-delay:2s"></div>
-<div class="star" style="left:60%;animation-delay:1s"></div>
-<div class="star" style="left:80%;animation-delay:3s"></div>
-
-</div>
+<div class="container">
 
 <header>
 
-<div class="logo">富達科技聯合處理中心</div>
+<h1>富達科技聯合處理中心</h1>
 
-<nav>
-
-<a href="#">首頁</a>
-<a href="#services">核心服務</a>
-<a href="#security">安全架構</a>
-<a href="#about">公司介紹</a>
-<a href="#brands">品牌體系</a>
-<a href="#contact">聯絡我們</a>
-
-</nav>
+<p>
+金融科技｜第三方金流｜系統研發｜數位平台整合
+</p>
 
 </header>
 
-<section class="hero">
 
-<h1>金融科技 × 金流系統 × 投資策略</h1>
 
-<p>
+<section>
 
-富達科技聯合處理中心為專注於金融科技整合與資金管理的科技團隊，
-致力於建立安全、穩定且高效率的交易與支付環境。
+<h2>企業介紹</h2>
 
-團隊核心服務包含第三方金流系統整合、
-金融科技平台開發、交易風控架構以及資金管理服務。
-透過完善的技術架構與系統開發能力，
-為企業與合作夥伴提供穩定可靠的交易基礎設施。
+<p style="font-size:14px;color:#cbd2ff">
+
+富達科技聯合處理中心為專注於金融科技與系統服務的科技團隊，
+主要提供第三方金流整合、交易系統處理、
+以及數位平台技術支援。
+
+透過穩定的系統架構與完整的資金管理機制，
+為合作夥伴提供安全、可靠且高效率的交易處理服務。
+
+團隊長期致力於打造穩定的金融科技環境，
+並持續優化系統安全與交易效率，
+讓各類型平台能夠更順利地完成金流與交易整合。
 
 </p>
-
-<a class="btn" href="https://lin.ee/MGbqV0C" target="_blank">
-聯絡官方客服
-</a>
 
 </section>
 
 
 
-<section id="services" class="section">
+<section>
 
 <h2>核心服務</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <h3>第三方金流整合</h3>
-
 <p>
-
-提供企業完整的第三方金流整合服務，
-包含收款系統串接、交易處理與資金流管理。
-
-系統支援高流量交易處理，
-並提供完整交易紀錄與對帳機制，
-協助企業建立安全且穩定的收付款系統。
-
+提供多元支付方式整合服務，
+協助平台快速建立收付款機制，
+提升交易效率與資金管理能力。
 </p>
-
 </div>
 
-
-
 <div class="card">
-
-<h3>金融科技系統開發</h3>
-
+<h3>金融科技系統</h3>
 <p>
-
-團隊專注於金融科技平台開發，
-提供帳戶系統、交易處理架構與管理後台。
-
-系統設計具備高穩定性與可擴展性，
-可支援大量交易與長期營運需求。
-
+建構穩定且安全的交易處理系統，
+確保平台金流運作順暢，
+並提供即時資料處理與監控能力。
 </p>
-
 </div>
 
-
-
 <div class="card">
-
-<h3>投資策略與資金管理</h3>
-
+<h3>平台技術支援</h3>
 <p>
-
-透過市場研究與數據分析，
-建立多元投資策略與資金運作模式，
-為資金運營提供更高效率的管理方式。
-
+為數位平台與電商服務提供技術支援，
+協助平台完成交易系統整合與營運管理。
 </p>
-
 </div>
 
-
-
 <div class="card">
-
-<h3>系統技術整合</h3>
-
+<h3>資金管理架構</h3>
 <p>
-
-提供企業系統整合服務，
-包含 API 串接、資料整合與平台管理工具，
-協助企業建立完整的數位營運架構。
-
+建立完整的資金管理與帳務系統，
+讓平台能夠更安全地管理交易資金。
 </p>
-
 </div>
 
 </div>
@@ -309,74 +220,9 @@ font-size:13px;
 
 
 
-<section id="security" class="section">
+<section>
 
-<h2>安全與風控架構</h2>
-
-<div class="text">
-
-<p>
-
-在金融交易與資金管理領域中，
-安全與風險控制為最重要的核心。
-
-富達科技聯合處理中心透過多層級交易監控、
-異常交易偵測與系統安全機制，
-建立完善的交易風控架構。
-
-</p>
-
-<br>
-
-<p>
-
-系統透過交易監控與資料分析，
-即時偵測異常交易行為，
-確保平台交易安全與資金流穩定。
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="about" class="section">
-
-<h2>公司介紹</h2>
-
-<div class="text">
-
-<p>
-
-富達科技聯合處理中心為金融科技整合團隊，
-致力於打造安全且高效率的金融科技服務平台。
-
-團隊核心專注於金流處理系統、
-金融科技平台開發以及資金管理架構。
-
-</p>
-
-<br>
-
-<p>
-
-透過穩定的系統架構與專業技術能力，
-我們為合作夥伴提供可靠的金融科技基礎建設，
-協助企業建立完整的交易環境與資金管理體系。
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="brands" class="section">
-
-<h2>品牌體系</h2>
+<h2>品牌與合作體系</h2>
 
 <div class="grid">
 
@@ -385,11 +231,10 @@ font-size:13px;
 <h4>富達科技聯合處理中心</h4>
 
 <p>
-
-核心金融科技品牌，
-主要負責第三方金流整合、
-金融科技系統開發與資金管理架構。
-
+本團隊核心品牌，
+主要負責金融科技系統研發、
+交易處理架構與金流整合服務，
+為合作平台提供穩定的交易技術支援。
 </p>
 
 </div>
@@ -401,10 +246,10 @@ font-size:13px;
 <h4>ZR SHOP</h4>
 
 <p>
-
-數位服務與科技平台，
-提供多元線上服務與數位商品解決方案。
-
+ZR SHOP 為數位服務平台品牌，
+提供各類型線上服務與數位商品解決方案，
+透過穩定的交易系統與完善的客服體系，
+打造安全的數位服務平台。
 </p>
 
 </div>
@@ -416,10 +261,9 @@ font-size:13px;
 <h4>YUKI</h4>
 
 <p>
-
-電商品牌與數位服務平台，
-專注於線上商城與數位商品銷售。
-
+YUKI 為數位電商品牌，
+專注於線上商城與商品服務，
+提供使用者便利的數位購物體驗。
 </p>
 
 </div>
@@ -432,12 +276,12 @@ font-size:13px;
 
 <p>
 
-SHRIMP 商城為本團隊旗下平台，
-專注於代儲與代購服務系統。
+SHRIMP 商城為本團隊旗下數位服務平台，
+專注於代儲與代購服務系統整合。
 
-平台提供完整訂單管理系統、
-自動化處理工具與金流整合機制，
-提升交易效率並確保交易流程穩定安全。
+平台提供完整訂單管理、
+金流整合與交易系統，
+讓用戶能夠快速完成各類型數位商品交易。
 
 </p>
 
@@ -451,9 +295,9 @@ SHRIMP 商城為本團隊旗下平台，
 
 <p>
 
-ECX PANEL 為本團隊合作與關係企業，
-提供系統管理面板與技術工具，
-雙方於系統開發與平台技術方面保持合作。
+ECX PANEL 為本團隊合作技術夥伴，
+主要提供系統面板與相關技術工具，
+雙方在系統架構與技術開發上保持合作。
 
 </p>
 
@@ -465,21 +309,24 @@ ECX PANEL 為本團隊合作與關係企業，
 
 
 
-<section id="contact" class="section">
+<section>
 
-<h2>聯絡客服</h2>
+<h2>聯絡我們</h2>
 
-<div class="text">
+<p style="font-size:14px;color:#cbd2ff">
 
-<p>官方LINE：</p>
-<p>https://lin.ee/MGbqV0C</p>
+客服電子郵件：<br>
+<b style="color:white">Wag123890@gmail.com</b>
 
-<br>
+<br><br>
 
-<p>Email：</p>
-<p>Wag123890@gmail.com</p>
+官方客服 LINE：<br>
 
-</div>
+<a href="https://lin.ee/MGbqV0C" style="color:#7ea2ff">
+https://lin.ee/MGbqV0C
+</a>
+
+</p>
 
 </section>
 
@@ -487,16 +334,69 @@ ECX PANEL 為本團隊合作與關係企業，
 
 <footer>
 
-<p>© 2026 富達科技聯合處理中心</p>
+<p>
+© 2026 富達科技聯合處理中心
+</p>
 
-<p class="notice">
-
+<p>
 本團隊所有款項均由永豐銀行做專款專用帳戶
-
 </p>
 
 </footer>
 
-</body>
+</div>
 
+
+
+<a class="line-btn" href="https://lin.ee/MGbqV0C">LINE 客服</a>
+
+
+
+<script>
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<120;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*1.2,
+v:Math.random()*0.3
+})
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+stars.forEach(s=>{
+ctx.beginPath()
+ctx.arc(s.x,s.y,s.r,0,Math.PI*2)
+ctx.fillStyle="#6b86ff"
+ctx.fill()
+
+s.y+=s.v
+
+if(s.y>canvas.height){
+s.y=0
+s.x=Math.random()*canvas.width
+}
+
+})
+
+requestAnimationFrame(draw)
+
+}
+
+draw()
+
+</script>
+
+</body>
 </html>
